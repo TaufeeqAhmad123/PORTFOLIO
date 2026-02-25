@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taufeeq Ahmad — Flutter & App Developer</title>
+    <meta name="description" content="Portfolio of Taufeeq Ahmad — a passionate Flutter and App Developer specializing in mobile UI, clean architecture, Firebase, and REST APIs." />
+    <meta name="keywords" content="Taufeeq Ahmad, Flutter Developer, App Developer, Mobile UI, Portfolio" />
+    <meta name="author" content="Taufeeq Ahmad" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- ============================================ -->
+    <!--                  NAVBAR                      -->
+    <!-- ============================================ -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo" aria-label="Home">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-name">Taufeeq</span>
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+
+            <ul id="nav-menu" class="nav-menu">
+                <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+                <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+
+            <!-- Theme Toggle -->
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <i data-lucide="moon" class="theme-icon moon-icon"></i>
+                <i data-lucide="sun" class="theme-icon sun-icon"></i>
+                <span class="toggle-glow"></span>
+            </button>
+
+            <!-- Hamburger Menu -->
+            <button id="hamburger" class="hamburger" aria-label="Toggle navigation">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============================================ -->
+    <!--               HERO SECTION                   -->
+    <!-- ============================================ -->
+    <section id="home" class="hero-section">
+        <!-- Background particles -->
+        <canvas id="particles-canvas"></canvas>
+        <div class="hero-gradient-orb hero-orb-1"></div>
+        <div class="hero-gradient-orb hero-orb-2"></div>
+
+        <div class="hero-container">
+            <!-- Left: Text Content -->
+            <div class="hero-content reveal-left">
+                <p class="hero-greeting">
+                    <span class="greeting-line"></span>
+                    Hello, I'm
+                </p>
+                <h1 class="hero-name">Taufeeq<br /><span class="name-accent">Ahmad</span></h1>
+
+                <div class="typing-wrapper">
+                    <span class="typing-prefix">I'm a </span>
+                    <span id="typing-text" class="typing-text"></span>
+                    <span class="typing-cursor">|</span>
+                </div>
+
+                <p class="hero-description">
+                    Crafting beautiful, performant mobile experiences with Flutter. 
+                    Passionate about clean UI and seamless user journeys.
+                </p>
+
+                <!-- Social Links -->
+                <div class="hero-socials">
+                    <a href="https://github.com/TaufeeqAhmad123" target="_blank" rel="noopener" class="social-btn" aria-label="GitHub">
+                        <i data-lucide="github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/taufeeq-ahmad-67b751264/" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
+                        <i data-lucide="linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+                        <i data-lucide="instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="mailto:taufeeqahmad.cs@gmail.com" class="social-btn" aria-label="Email">
+                        <i data-lucide="mail"></i>
+                        <span>Email</span>
+                    </a>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View Projects</span>
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                    <a href="#" class="btn btn-glow" id="download-cv-btn">
+                        <i data-lucide="download"></i>
+                        <span>Download CV</span>
+                        <span class="btn-glow-border"></span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right: Animated Blob with Image -->
+            <div class="hero-visual reveal-right">
+                <div class="blob-wrapper">
+                    <div class="blob-glow"></div>
+                    <svg class="blob-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <clipPath id="blob-clip">
+                                <path id="blob-path" d="M440.5,320.5Q418,391,355.5,442.5Q293,494,226,450.5Q159,407,99.5,356Q40,305,34,237.5Q28,170,76,114Q124,58,189,45Q254,32,319.5,46Q385,60,422,124.5Q459,189,453.5,254.5Q448,320,440.5,320.5Z" />
+                            </clipPath>
+                        </defs>
+                        <!-- Blob Background -->
+                        <path id="blob-bg" class="blob-bg" d="M440.5,320.5Q418,391,355.5,442.5Q293,494,226,450.5Q159,407,99.5,356Q40,305,34,237.5Q28,170,76,114Q124,58,189,45Q254,32,319.5,46Q385,60,422,124.5Q459,189,453.5,254.5Q448,320,440.5,320.5Z" />
+                        <!-- Profile Image inside blob -->
+                        <image href="assets/profile.png" x="50" y="30" width="400" height="440" clip-path="url(#blob-clip)" preserveAspectRatio="xMidYMid slice" />
+                    </svg>
+                    <!-- Floating decoration elements -->
+                    <div class="float-element float-el-1"><i data-lucide="smartphone"></i></div>
+                    <div class="float-element float-el-2"><i data-lucide="code-2"></i></div>
+                    <div class="float-element float-el-3"><i data-lucide="palette"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--              ABOUT SECTION                   -->
+    <!-- ============================================ -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Get to know me</span>
+                <h2 class="section-title">About <span class="text-accent">Me</span></h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-image reveal-left">
+                    <div class="about-img-wrapper">
+                        <img src="assets/Taufeeq.jpg" alt="Taufeeq Ahmad" loading="lazy" />
+                        <div class="about-img-glow"></div>
+                        <div class="about-img-border"></div>
+                    </div>
+                    <!-- Experience badge -->
+                    <div class="experience-badge">
+                        <span class="exp-number">2+</span>
+                        <span class="exp-text">Years of<br />Experience</span>
+                    </div>
+                </div>
+
+                <div class="about-content reveal-right">
+                    <h3 class="about-subtitle">A passionate <span class="text-accent">Flutter Developer</span> based in Pakistan 🇵🇰</h3>
+                    <p class="about-text">
+                        I'm Taufeeq Ahmad, a dedicated Flutter and Mobile App Developer with a keen eye for crafting
+                        beautiful, responsive, and performant applications. I specialize in building cross-platform
+                        mobile apps that deliver seamless user experiences.
+                    </p>
+                    <p class="about-text">
+                        My expertise spans across <strong>Clean Architecture</strong>, <strong>Firebase</strong>,
+                        <strong>REST APIs</strong>, and <strong>state management</strong> solutions. I'm passionate about 
+                        creating pixel-perfect UIs and writing maintainable, scalable code.
+                    </p>
+
+                    <div class="about-stats">
+                        <div class="stat-card glass-card">
+                            <span class="stat-number" data-count="10">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-card glass-card">
+                            <span class="stat-number" data-count="2">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-card glass-card">
+                            <span class="stat-number" data-count="5">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn btn-primary about-cta">
+                        <span>Let's Talk</span>
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--             SKILLS SECTION                   -->
+    <!-- ============================================ -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">What I work with</span>
+                <h2 class="section-title">My <span class="text-accent">Skills</span></h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Languages -->
+                <div class="skill-category glass-card reveal-up" style="--delay: 0.1s">
+                    <div class="skill-cat-icon"><i data-lucide="code-2"></i></div>
+                    <h3 class="skill-cat-title">Languages</h3>
+                    <div class="skill-items">
+                        <div class="skill-chip"><span>Dart</span></div>
+                        <div class="skill-chip"><span>JavaScript</span></div>
+                        <div class="skill-chip"><span>Python</span></div>
+                        <div class="skill-chip"><span>Java</span></div>
+                        <div class="skill-chip"><span>HTML / CSS</span></div>
+                    </div>
+                </div>
+
+                <!-- Frameworks -->
+                <div class="skill-category glass-card reveal-up" style="--delay: 0.2s">
+                    <div class="skill-cat-icon"><i data-lucide="layers"></i></div>
+                    <h3 class="skill-cat-title">Frameworks</h3>
+                    <div class="skill-items">
+                        <div class="skill-chip"><span>Flutter</span></div>
+                        <div class="skill-chip"><span>GetX</span></div>
+                        <div class="skill-chip"><span>Provider</span></div>
+                        <div class="skill-chip"><span>Bloc</span></div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="skill-category glass-card reveal-up" style="--delay: 0.3s">
+                    <div class="skill-cat-icon"><i data-lucide="wrench"></i></div>
+                    <h3 class="skill-cat-title">Tools</h3>
+                    <div class="skill-items">
+                        <div class="skill-chip"><span>VS Code</span></div>
+                        <div class="skill-chip"><span>Android Studio</span></div>
+                        <div class="skill-chip"><span>Git & GitHub</span></div>
+                        <div class="skill-chip"><span>Figma</span></div>
+                        <div class="skill-chip"><span>Postman</span></div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="skill-category glass-card reveal-up" style="--delay: 0.4s">
+                    <div class="skill-cat-icon"><i data-lucide="database"></i></div>
+                    <h3 class="skill-cat-title">Backend</h3>
+                    <div class="skill-items">
+                        <div class="skill-chip"><span>Firebase</span></div>
+                        <div class="skill-chip"><span>REST APIs</span></div>
+                        <div class="skill-chip"><span>SQLite</span></div>
+                        <div class="skill-chip"><span>Hive</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--            PROJECTS SECTION                  -->
+    <!-- ============================================ -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">My recent work</span>
+                <h2 class="section-title">Featured <span class="text-accent">Projects</span></h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card glass-card reveal-up" style="--delay: 0.1s">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i data-lucide="shopping-cart"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-icon-btn" aria-label="Live Demo"><i data-lucide="external-link"></i></a>
+                            <a href="#" class="project-icon-btn" aria-label="GitHub"><i data-lucide="github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">E-Commerce App</h3>
+                        <p class="project-desc">A full-featured e-commerce application with cart, wishlist, payment integration, and user authentication.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Flutter</span>
+                            <span class="project-tag">Firebase</span>
+                            <span class="project-tag">GetX</span>
+                            <span class="project-tag">Stripe</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm btn-outline">
+                                <i data-lucide="external-link"></i> Live Demo
+                            </a>
+                            <a href="#" class="btn btn-sm btn-glow-sm">
+                                <i data-lucide="github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glass-card reveal-up" style="--delay: 0.2s">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i data-lucide="message-circle"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-icon-btn" aria-label="Live Demo"><i data-lucide="external-link"></i></a>
+                            <a href="#" class="project-icon-btn" aria-label="GitHub"><i data-lucide="github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Chat Application</h3>
+                        <p class="project-desc">Real-time messaging app with group chats, media sharing, typing indicators, and push notifications.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Flutter</span>
+                            <span class="project-tag">Firebase</span>
+                            <span class="project-tag">Provider</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm btn-outline">
+                                <i data-lucide="external-link"></i> Live Demo
+                            </a>
+                            <a href="#" class="btn btn-sm btn-glow-sm">
+                                <i data-lucide="github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card glass-card reveal-up" style="--delay: 0.3s">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i data-lucide="cloud-sun"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-icon-btn" aria-label="Live Demo"><i data-lucide="external-link"></i></a>
+                            <a href="#" class="project-icon-btn" aria-label="GitHub"><i data-lucide="github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Weather App</h3>
+                        <p class="project-desc">Beautiful weather app with animated forecasts, location-based weather data, and hourly/weekly views.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Flutter</span>
+                            <span class="project-tag">REST API</span>
+                            <span class="project-tag">Bloc</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm btn-outline">
+                                <i data-lucide="external-link"></i> Live Demo
+                            </a>
+                            <a href="#" class="btn btn-sm btn-glow-sm">
+                                <i data-lucide="github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card glass-card reveal-up" style="--delay: 0.4s">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i data-lucide="list-todo"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-icon-btn" aria-label="Live Demo"><i data-lucide="external-link"></i></a>
+                            <a href="#" class="project-icon-btn" aria-label="GitHub"><i data-lucide="github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Task Manager</h3>
+                        <p class="project-desc">A productivity app with task categorization, reminders, dark mode, and offline support using Hive.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Flutter</span>
+                            <span class="project-tag">Hive</span>
+                            <span class="project-tag">GetX</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm btn-outline">
+                                <i data-lucide="external-link"></i> Live Demo
+                            </a>
+                            <a href="#" class="btn btn-sm btn-glow-sm">
+                                <i data-lucide="github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--            CONTACT SECTION                   -->
+    <!-- ============================================ -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Get in touch</span>
+                <h2 class="section-title">Contact <span class="text-accent">Me</span></h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info reveal-left">
+                    <h3 class="contact-subtitle">Let's work together!</h3>
+                    <p class="contact-text">Feel free to reach out if you want to collaborate on a project, have a question, or just want to connect.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item glass-card">
+                            <div class="contact-item-icon"><i data-lucide="mail"></i></div>
+                            <div>
+                                <span class="contact-item-label">Email</span>
+                                <a href="mailto:taufeeqahmad.cs@gmail.com" class="contact-item-value">taufeeqahmad.cs@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item glass-card">
+                            <div class="contact-item-icon"><i data-lucide="map-pin"></i></div>
+                            <div>
+                                <span class="contact-item-label">Location</span>
+                                <span class="contact-item-value">Pakistan</span>
+                            </div>
+                        </div>
+                        <div class="contact-item glass-card">
+                            <div class="contact-item-icon"><i data-lucide="briefcase"></i></div>
+                            <div>
+                                <span class="contact-item-label">Freelance</span>
+                                <span class="contact-item-value status-available">Available</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social strip -->
+                    <div class="contact-socials">
+                        <a href="https://github.com/TaufeeqAhmad123" target="_blank" rel="noopener" class="contact-social-icon" aria-label="GitHub"><i data-lucide="github"></i></a>
+                        <a href="https://www.linkedin.com/in/taufeeq-ahmad-67b751264/" target="_blank" rel="noopener" class="contact-social-icon" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="contact-social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Contact Form — powered by FormSubmit.co -->
+                <form id="contact-form" class="contact-form glass-card reveal-right" action="https://formsubmit.co/taufeeqahmad.cs@gmail.com" method="POST" novalidate>
+                    <!-- FormSubmit config (hidden) -->
+                    <input type="hidden" name="_subject" value="Portfolio Contact — New Message" />
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_template" value="table" />
+                    <input type="hidden" name="_replyto" value="" />
+                    <input type="hidden" name="_autoresponse" value="Thank you for reaching out! I will get back to you soon. — Taufeeq Ahmad" />
+                    <input type="text" name="_honey" style="display:none" /> <!-- spam honeypot -->
+                    <div class="form-group">
+                        <input type="text" id="form-name" name="name" required autocomplete="name" />
+                        <label for="form-name" class="floating-label">Your Name</label>
+                        <span class="input-glow"></span>
+                        <span class="form-error" id="name-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="form-email" name="email" required autocomplete="email" />
+                        <label for="form-email" class="floating-label">Your Email</label>
+                        <span class="input-glow"></span>
+                        <span class="form-error" id="email-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="form-message" name="message" rows="5" required></textarea>
+                        <label for="form-message" class="floating-label">Your Message</label>
+                        <span class="input-glow"></span>
+                        <span class="form-error" id="message-error"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <i data-lucide="send"></i>
+                        <span class="btn-loader"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                 FOOTER                       -->
+    <!-- ============================================ -->
+    <footer class="footer">
+        <div class="footer-glow"></div>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#home" class="footer-logo" aria-label="Home">
+                    <span class="logo-bracket">&lt;</span>
+                    <span class="logo-name">Taufeeq</span>
+                    <span class="logo-bracket">/&gt;</span>
+                </a>
+
+                <div class="footer-socials">
+                    <a href="https://github.com/TaufeeqAhmad123" target="_blank" rel="noopener" aria-label="GitHub"><i data-lucide="github"></i></a>
+                    <a href="https://www.linkedin.com/in/taufeeq-ahmad-67b751264/" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    <a href="mailto:taufeeqahmad.cs@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
+                </div>
+
+                <p class="footer-copy">&copy; 2026 Taufeeq Ahmad. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i data-lucide="chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
