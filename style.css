@@ -545,9 +545,12 @@ textarea {
   transition: all var(--transition-base);
 }
 
-.social-btn svg {
+.social-btn svg,
+.social-btn .fa-brands {
   width: 16px;
   height: 16px;
+  font-size: 16px;
+  line-height: 1;
 }
 
 .social-btn:hover {
@@ -1326,9 +1329,12 @@ a.contact-item-value:hover {
   transition: all var(--transition-base);
 }
 
-.contact-social-icon svg {
+.contact-social-icon svg,
+.contact-social-icon .fa-brands {
   width: 18px;
   height: 18px;
+  font-size: 18px;
+  line-height: 1;
 }
 
 .contact-social-icon:hover {
@@ -1475,6 +1481,47 @@ a.contact-item-value:hover {
 }
 
 /* ============================================
+   BANNER / SHOWCASE
+   ============================================ */
+.banner-section {
+  padding: 40px 0 60px;
+  position: relative;
+}
+
+.banner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.banner-card {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+}
+
+.banner-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.banner-card:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .banner-grid {
+    grid-template-columns: 1fr;
+  }
+  .banner-card img {
+    height: 200px;
+  }
+}
+
+/* ============================================
    FOOTER
    ============================================ */
 .footer {
@@ -1530,9 +1577,12 @@ a.contact-item-value:hover {
   transition: all var(--transition-base);
 }
 
-.footer-socials a svg {
+.footer-socials a svg,
+.footer-socials a .fa-brands {
   width: 16px;
   height: 16px;
+  font-size: 16px;
+  line-height: 1;
 }
 
 .footer-socials a:hover {
