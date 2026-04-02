@@ -651,9 +651,12 @@ textarea {
   border-radius: var(--radius-sm);
 }
 
-.btn-sm svg {
+.btn-sm svg,
+.btn-sm .fa-brands {
   width: 14px;
   height: 14px;
+  font-size: 14px;
+  line-height: 1;
 }
 
 .btn-outline {
@@ -1136,6 +1139,17 @@ textarea {
   background: linear-gradient(135deg, var(--accent-subtle), var(--bg-card));
 }
 
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.08);
+}
+
 .project-placeholder {
   display: flex;
   align-items: center;
@@ -1188,9 +1202,12 @@ textarea {
   box-shadow: 0 0 20px var(--accent-glow);
 }
 
-.project-icon-btn svg {
+.project-icon-btn svg,
+.project-icon-btn .fa-brands {
   width: 18px;
   height: 18px;
+  font-size: 18px;
+  line-height: 1;
 }
 
 .project-info {
