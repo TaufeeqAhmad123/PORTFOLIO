@@ -18,7 +18,38 @@ document.addEventListener("DOMContentLoaded", () => {
   initContactForm();
   initBackToTop();
   initCountUp();
+  initCardTilt();
 });
+
+/* ============================================
+   3D CARD TILT EFFECT
+   ============================================ */
+function initCardTilt() {
+  const tiltCards = document.querySelectorAll('.project-card, .skill-category');
+  const maxTilt = 8; // degrees
+
+  tiltCards.forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;  // cursor X inside card
+      const y = e.clientY - rect.top;   // cursor Y inside card
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      // Normalise -1 to 1
+      const rotateY = ((x - centerX) / centerX) * maxTilt;
+      const rotateX = ((centerY - y) / centerY) * maxTilt;
+
+      card.style.transition = 'transform 0.1s ease';
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transition = 'transform 0.5s ease';
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    });
+  });
+}
 
 /* ============================================
    NAVBAR

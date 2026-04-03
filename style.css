@@ -1044,12 +1044,15 @@ textarea {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
+  perspective: 1000px;
 }
 
 .skill-category {
   padding: 32px 28px;
   text-align: center;
   animation-delay: var(--delay, 0s);
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .skill-cat-icon {
@@ -1121,15 +1124,14 @@ textarea {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 28px;
+  perspective: 1000px;
 }
 
 .project-card {
   overflow: hidden;
   animation-delay: var(--delay, 0s);
-}
-
-.project-card:hover {
-  transform: translateY(-6px) scale(1.01);
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .project-image {
