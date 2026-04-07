@@ -387,8 +387,11 @@ textarea {
 }
 
 #particles-canvas {
-  position: absolute;
-  inset: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 0;
   pointer-events: none;
 }
@@ -1246,78 +1249,106 @@ textarea {
 /* ============================================
    SKILLS SECTION
    ============================================ */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  perspective: 1000px;
+
+/* Skills marquee wrapper */
+.skills-marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin-top: 16px;
 }
 
-.skill-category {
-  padding: 32px 28px;
-  text-align: center;
-  animation-delay: var(--delay, 0s);
-  transform-style: preserve-3d;
-  will-change: transform;
+/* Fade edges */
+.skills-marquee::before,
+.skills-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
 }
 
-.skill-cat-icon {
-  width: 56px;
-  height: 56px;
+.skills-marquee::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-primary), transparent);
+}
+
+.skills-marquee::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-primary), transparent);
+}
+
+.skills-marquee-track {
   display: flex;
+  gap: 28px;
+  width: max-content;
+  animation: skillsMarquee 25s linear infinite;
+}
+
+.skills-marquee:hover .skills-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes skillsMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 14px));
+  }
+}
+
+/* Skill icon card */
+.skill-icon-card {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--accent-subtle);
-  border-radius: var(--radius-md);
-  color: var(--accent);
-  margin: 0 auto 16px;
+  gap: 12px;
+  min-width: 120px;
+  padding: 28px 20px;
+  flex-shrink: 0;
+  border-radius: var(--radius-lg);
   transition: all var(--transition-base);
+  cursor: default;
 }
 
-.skill-cat-icon svg {
-  width: 26px;
-  height: 26px;
+.skill-icon-card img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-.skill-category:hover .skill-cat-icon {
-  background: var(--accent);
-  color: #fff;
-  box-shadow: 0 0 20px var(--accent-glow);
-  transform: scale(1.1);
-}
-
-.skill-cat-title {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.skill-items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-}
-
-.skill-chip {
-  padding: 8px 16px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 50px;
-  font-size: 0.82rem;
-  font-weight: 500;
+.skill-icon-card span {
+  font-size: 0.85rem;
+  font-weight: 600;
   color: var(--text-secondary);
-  transition: all var(--transition-base);
+  text-align: center;
+  white-space: nowrap;
 }
 
-.skill-chip:hover {
-  color: var(--accent);
+.skill-icon-card:hover {
+  transform: translateY(-6px);
   border-color: var(--accent);
-  background: var(--accent-subtle);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px var(--accent-glow);
+  box-shadow: 0 8px 30px var(--accent-glow);
 }
+
+.skill-icon-card:hover img {
+  transform: scale(1.15);
+}
+
+.skill-icon-card:hover span {
+  color: var(--accent);
+}
+
+/* Make GitHub icon visible in dark mode */
+[data-theme="dark"] .skill-icon-card img[alt="GitHub"] {
+  filter: invert(1);
+}
+
 
 /* ============================================
    PROJECTS SECTION
@@ -1326,11 +1357,125 @@ textarea {
   background: var(--bg-secondary);
 }
 
+/* Infinite marquee animation */
+.projects-marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* Fade edges for premium look */
+.projects-marquee::before,
+.projects-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.projects-marquee::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-secondary), transparent);
+}
+
+.projects-marquee::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-secondary), transparent);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: marqueeScroll 30s linear infinite;
+}
+
+/* Pause on hover so users can interact with cards */
+.projects-marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-track .project-card {
+  min-width: 320px;
+  max-width: 340px;
+  flex-shrink: 0;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Translate by exactly half (the original 6 cards + gaps) */
+    transform: translateX(calc(-50% - 12px));
+  }
+}
+
+/* Show More Button */
+.show-more-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.btn-show-more {
+  padding: 16px 40px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Grid layout for all-projects page */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 28px;
   perspective: 1000px;
+}
+
+/* All-projects page wrapper */
+.all-projects-page {
+  padding-top: 120px;
+  min-height: 100vh;
+}
+
+.all-projects-page .section-header {
+  margin-bottom: 48px;
+}
+
+.back-link-wrapper {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.btn-back svg {
+  width: 18px;
+  height: 18px;
+}
+
+.btn-back:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+  box-shadow: 0 0 20px var(--accent-glow);
+  transform: translateY(-2px);
 }
 
 .project-card {
@@ -2070,6 +2215,11 @@ a.contact-item-value:hover {
   }
 
   /* Projects */
+  .marquee-track .project-card {
+    min-width: 280px;
+    max-width: 300px;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
   }

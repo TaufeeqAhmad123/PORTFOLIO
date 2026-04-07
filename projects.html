@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Projects — Taufeeq Ahmad</title>
+    <meta name="description" content="Browse all projects by Taufeeq Ahmad — Flutter and App Developer." />
+    <meta name="author" content="Taufeeq Ahmad" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Font Awesome for brand icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- ============================================ -->
+    <!--                  NAVBAR                      -->
+    <!-- ============================================ -->
+    <nav id="navbar" class="navbar scrolled">
+        <div class="nav-container">
+            <a href="index.html#home" class="nav-logo" aria-label="Home">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-name">Taufeeq</span>
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+
+            <ul id="nav-menu" class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="index.html#projects" class="nav-link active">Projects</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <!-- Theme Toggle -->
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <i data-lucide="moon" class="theme-icon moon-icon"></i>
+                <i data-lucide="sun" class="theme-icon sun-icon"></i>
+                <span class="toggle-glow"></span>
+            </button>
+
+            <!-- Hamburger Menu -->
+            <button id="hamburger" class="hamburger" aria-label="Toggle navigation">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============================================ -->
+    <!--            ALL PROJECTS PAGE                 -->
+    <!-- ============================================ -->
+    <section class="section all-projects-page">
+        <div class="container">
+            <div class="back-link-wrapper">
+                <a href="index.html#projects" class="btn-back">
+                    <i data-lucide="arrow-left"></i>
+                    <span>Back to Home</span>
+                </a>
+            </div>
+
+            <div class="section-header reveal-up">
+                <span class="section-tag">All my work</span>
+                <h1 class="section-title">My <span class="text-accent">Projects</span></h1>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card glass-card reveal-up" style="--delay: 0.1s">
+                    <div class="project-image">
+                        <img src="assets/ecommerce.png" alt="E-Commerce App" loading="lazy" />
+                        <div class="project-overlay">
+                            <a href="#" class="project-icon-btn" aria-label="Live Demo"><i data-lucide="external-link"></i></a>
+                            <a href="https://github.com/TaufeeqAhmad123/TStore_App" target="_blank" rel="noopener" class="project-icon-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">TStore App</h3>
+                        <p class="project-desc">A full-featured e-commerce application with cart, wishlist, payment integration, and user authentication.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Flutter</span>
+                            <span class="project-tag">Firebase</span>
+                            <span class="project-tag">GetX</span>
+                            <span class="project-tag">Stripe</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm btn-outline">
+                                <i data-lucide="external-link"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/TaufeeqAhmad123/TStore_App" target="_blank" rel="noopener" class="btn btn-sm btn-glow-sm">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glass-card reveal-up" style="--delay: 0.2s">
+                    <div class="project-image">
+                        <img src="assets/dairyform.png" alt="Dairy Form Automation" loading="lazy" />
+                        <div class="project-overlay">
+                            <a href="#" class="project-icon-btn" aria-label="Live Demo"><i data-lucide="external-link"></i></a>
+                            <a href="https://github.com/TaufeeqAhmad123/Dairy_Form_automation_system" target="_blank" rel="noopener" class="project-icon-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Dairy Form Automation</h3>
+                        <p class="project-desc">Real-time messaging app with group chats, media sharing, typing indicators, and push notifications.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Flutter</span>
+                            <span class="project-tag">Firebase</span>
+                            <span class="project-tag">Provider</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm btn-outline">
+                                <i data-lucide="external-link"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/TaufeeqAhmad123/Dairy_Form_automation_system" target="_blank" rel="noopener" class="btn btn-sm btn-glow-sm">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card glass-card reveal-up" style="--delay: 0.3s">
+                    <div class="project-image">
+                        <img src="assets/twitter.png" alt="X Clone" loading="lazy" />
+                        <div class="project-overlay">
+                            <a href="#" class="project-icon-btn" aria-label="Live Demo"><i data-lucide="external-link"></i></a>
+                            <a href="https://github.com/TaufeeqAhmad123/X-Clone/tree/main/x_clone_app" target="_blank" rel="noopener" class="project-icon-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">X Clone</h3>
+                        <p class="project-desc">Beautiful weather app with animated forecasts, location-based weather data, and hourly/weekly views.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Flutter</span>
+                            <span class="project-tag">REST API</span>
+                            <span class="project-tag">Bloc</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm btn-outline">
+                                <i data-lucide="external-link"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/TaufeeqAhmad123/X-Clone/tree/main/x_clone_app" target="_blank" rel="noopener" class="btn btn-sm btn-glow-sm">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card glass-card reveal-up" style="--delay: 0.4s">
+                    <div class="project-image">
+                        <img src="assets/chatgpt.png" alt="ChatGPT Bot" loading="lazy" />
+                        <div class="project-overlay">
+                            <a href="#" class="project-icon-btn" aria-label="Live Demo"><i data-lucide="external-link"></i></a>
+                            <a href="https://github.com/TaufeeqAhmad123/Chat_GPT_Bot" target="_blank" rel="noopener" class="project-icon-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">ChatGPT Bot</h3>
+                        <p class="project-desc">A productivity app with task categorization, reminders, dark mode, and offline support using Hive.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Flutter</span>
+                            <span class="project-tag">Hive</span>
+                            <span class="project-tag">GetX</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm btn-outline">
+                                <i data-lucide="external-link"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/TaufeeqAhmad123/Chat_GPT_Bot" target="_blank" rel="noopener" class="btn btn-sm btn-glow-sm">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card glass-card reveal-up" style="--delay: 0.5s">
+                    <div class="project-image">
+                        <img src="assets/listnlit.png" alt="Listen Lit" loading="lazy" />
+                        <div class="project-overlay">
+                            <a href="#" class="project-icon-btn" aria-label="Live Demo"><i data-lucide="external-link"></i></a>
+                            <a href="https://github.com/TaufeeqAhmad123/music_app" target="_blank" rel="noopener" class="project-icon-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Listen Lit</h3>
+                        <p class="project-desc">A music and audiobook streaming app with playlists, recommendations, and a sleek player UI.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Flutter</span>
+                            <span class="project-tag">Firebase</span>
+                            <span class="project-tag">Provider</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm btn-outline">
+                                <i data-lucide="external-link"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/TaufeeqAhmad123/music_app" target="_blank" rel="noopener" class="btn btn-sm btn-glow-sm">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card glass-card reveal-up" style="--delay: 0.6s">
+                    <div class="project-image">
+                        <img src="assets/meetly.png" alt="Meetly" loading="lazy" />
+                        <div class="project-overlay">
+                            <a href="#" class="project-icon-btn" aria-label="Live Demo"><i data-lucide="external-link"></i></a>
+                            <a href="https://github.com/TaufeeqAhmad123/Meetly" target="_blank" rel="noopener" class="project-icon-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Meetly</h3>
+                        <p class="project-desc">A video and audio call sharing app with real-time communication, screen sharing, and group calling features.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Flutter</span>
+                            <span class="project-tag">Firebase</span>
+                            <span class="project-tag">Zego Cloud</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm btn-outline">
+                                <i data-lucide="external-link"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/TaufeeqAhmad123/Meetly" target="_blank" rel="noopener" class="btn btn-sm btn-glow-sm">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                 FOOTER                       -->
+    <!-- ============================================ -->
+    <footer class="footer">
+        <div class="footer-glow"></div>
+        <div class="container">
+            <div class="footer-content">
+                <a href="index.html#home" class="footer-logo" aria-label="Home">
+                    <span class="logo-bracket">&lt;</span>
+                    <span class="logo-name">Taufeeq</span>
+                    <span class="logo-bracket">/&gt;</span>
+                </a>
+
+                <div class="footer-socials">
+                    <a href="https://github.com/TaufeeqAhmad123" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/taufeeq-ahmad-67b751264/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="mailto:taufeeqahmad.cs@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
+                </div>
+
+                <p class="footer-copy">&copy; 2026 Taufeeq Ahmad. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i data-lucide="chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
