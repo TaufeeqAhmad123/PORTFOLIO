@@ -921,6 +921,22 @@ textarea {
   align-items: center;
 }
 
+/* Single column variant (no picture) */
+.about-grid-single {
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-grid-single .about-stats {
+  justify-items: center;
+}
+
+.about-grid-single .about-cta {
+  display: inline-flex;
+}
+
 .about-img-wrapper {
   position: relative;
   border-radius: var(--radius-xl);

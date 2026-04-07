@@ -340,15 +340,21 @@ function initParticles() {
     reset() {
       this.x = Math.random() * canvas.width;
       this.y = Math.random() * canvas.height;
-      this.size = Math.random() * 2 + 0.5;
-      this.speedX = (Math.random() - 0.5) * 0.4;
-      this.speedY = (Math.random() - 0.5) * 0.4;
-      this.opacity = Math.random() * 0.4 + 0.1;
+      this.size = Math.random() * 3 + 0.5;
+      this.speedX = (Math.random() - 0.5) * 0.5;
+      this.speedY = (Math.random() - 0.5) * 0.5;
+      this.opacity = Math.random() * 0.5 + 0.1;
+      this.pulseSpeed = Math.random() * 0.02 + 0.005;
+      this.pulseOffset = Math.random() * Math.PI * 2;
+      // 0 = circle, 1 = diamond, 2 = star
+      this.shape = Math.floor(Math.random() * 3);
     }
 
     update() {
       this.x += this.speedX;
       this.y += this.speedY;
+      // Pulse opacity
+      this.opacity = (Math.sin(Date.now() * this.pulseSpeed * 0.01 + this.pulseOffset) + 1) * 0.2 + 0.1;
 
       if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
       if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
@@ -360,17 +366,33 @@ function initParticles() {
         theme === "dark"
           ? `rgba(160, 140, 255, ${this.opacity})`
           : `rgba(100, 80, 200, ${this.opacity * 0.5})`;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
       ctx.fillStyle = color;
+      ctx.beginPath();
+
+      if (this.shape === 0) {
+        // Circle
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      } else if (this.shape === 1) {
+        // Diamond
+        ctx.moveTo(this.x, this.y - this.size);
+        ctx.lineTo(this.x + this.size, this.y);
+        ctx.lineTo(this.x, this.y + this.size);
+        ctx.lineTo(this.x - this.size, this.y);
+        ctx.closePath();
+      } else {
+        // Small cross/star
+        const s = this.size * 0.7;
+        ctx.rect(this.x - s / 4, this.y - s, s / 2, s * 2);
+        ctx.rect(this.x - s, this.y - s / 4, s * 2, s / 2);
+      }
       ctx.fill();
     }
   }
 
-  // Create particles (limit count for performance)
+  // Create particles — more particles for a denser look
   const count = Math.min(
-    60,
-    Math.floor((canvas.width * canvas.height) / 20000),
+    150,
+    Math.floor((canvas.width * canvas.height) / 8000),
   );
   for (let i = 0; i < count; i++) {
     particles.push(new Particle());
