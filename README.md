@@ -82,6 +82,7 @@ Organized into four skill categories displayed as glass cards:
 
 | Project              | Description                                                                 | Tech Stack                      |
 | -------------------- | --------------------------------------------------------------------------- | ------------------------------- |
+| **Spendora**         | Premium expense tracker application to manage and monitor personal finances | Flutter, Hive, GetX, Provider   |
 | **E-Commerce App**   | Full-featured app with cart, wishlist, payment integration, and auth        | Flutter, Firebase, GetX, Stripe |
 | **Chat Application** | Real-time messaging with group chats, media sharing, and notifications      | Flutter, Firebase, Provider     |
 | **Weather App**      | Animated forecasts, location-based data, hourly/weekly views                | Flutter, REST API, Bloc         |

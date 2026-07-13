@@ -1668,9 +1668,11 @@ textarea {
   border-radius: var(--radius-md);
 }
 
-.contact-item-icon svg {
+.contact-item-icon svg,
+.contact-item-icon i {
   width: 20px;
   height: 20px;
+  font-size: 20px;
 }
 
 .contact-item-label {
